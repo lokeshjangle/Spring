@@ -1,0 +1,35 @@
+Step to create Spring Boot Project
+Step 1:
+    - Open Web Browser adn access the URL: start.spring.io
+
+Step 2:
+    - Provide the Project Specific Configuration metaData
+    Eg.
+        Project Type: Maven/Gradle with Groovy/ Gradle with Kotlin etx
+        Version: *** Avoid Snapshot versions
+        Add dependencies: Web and Devtools
+        In case of Maven, maven specific metadata eg. groupId, articfactId and so on
+
+Step 3:
+    - Click 'Generate' to download the Maven project specific Zip file
+
+Step 4:
+    - Unzip the file and import on workspace
+
+Step 5:
+    - Change the port number.
+    - The embedded tomcat server given by spring boot by default gets launch on port  8080.
+    - Since 8080 is very common code it is advisable to change it
+    - To configure Spring Boot project eg. Changing the port number there is one properties file. It is located under 'src/main/resources'.
+
+
+Step 6:
+    - Create REST API End Point
+    Eg: HTTP GET for URL: /show-greeting
+
+    - To create any end-point in specific for REST, it is necessary to define a class which will be used for handling REST resources.
+
+    - Once the class is created, it is to be registered in such a way that it will be capable of handling REST resources.This is possible using an annotation called as @RestController
+    - It is applied at class level
+
+    - To create a endpoint it is necessary to define method and annotate that using '@RequestMapping' annotation

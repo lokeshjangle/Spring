@@ -1,0 +1,25 @@
+*Variables: Title of reserved memory locations
+*Use of semicolon is compulsory in java it used as terminal
+
+*lowercase variable: Write all character in lowercase Eg: helloworld
+	-Packages written in lowercase
+*UPPERCASE VARIABLE: Write all character in uppercase Eg: HELLOWORLD
+*cameCase Variable: First letter of first word is small and first letter of other world is capital Eg: helloWorld 
+	- It use for fuction and variable
+*PascalCase Variable: First letter of every word in variable is capital Eg: HelloWorld
+	-It use for Class name
+*snake_case: Separate the word using underscore Eg: hello_world
+	-It is use for Constant value in program
+
+**Rules for Naming Variables in Java
+
+1) Variables name should not begin with a number
+	-Eg: int 1stnum //it is wrong
+		int num_1 //right syntax
+2) Whitspace is not permitted in variable name
+	-Eg: money borrowed //wrong syntax
+		money_borrowd //right synta
+3) A java keyword(reserved word) cannot be used as a variable name
+	-Eg: int static //Wrong syntax bcoz static is keyword
+4) When creating variable it is preferred to give them meaningful name
+5) All lowercase letters should be used when creating one-word variables

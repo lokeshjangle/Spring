@@ -1,0 +1,23 @@
+Everything in java is written in classes
+
+Class: Class is user defined blueprint consisting of attributes and method of function
+Object: Object is instance of that class
+Eg: class: Car
+    method: Company,Color,Price, run(), openTrunk(), openWindow()
+    Object: BMW, Mercedes, Audi, etc..
+
+*Method is also known as function also
+*Function:
+	function is a block of code you should call in anywhere in program
+	=>Syntax:
+		return_value_type function_name (parameters){
+			return }
+	Eg: 	int addTwoNumbers(int x,  int y){
+			return (x+y)}
+
+*Step to run java program
+1) cd src //to access src folder
+2) javac filename.java  //To compile the java file and create class file
+3) java filename //To run or execute java file
+
+

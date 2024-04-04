@@ -1,0 +1,45 @@
+Steps to create a AOP Project
+
+Step 1:
+    Add Aspect J specific dependencies
+    1) Aspect JRT (Runtime)
+    2) Aspect Weaver
+
+Step 2:
+    - Create Bean Specific Class (Musician , Singer)
+
+Step 3:
+    - Create Aspect Specific class (Audience)
+    - Once the class is created, it must be registered as Aspect Specific Class
+    - This is done by using @Aspect annotation provided by Aspect J library
+
+    - Once the class define the relevant methods for handling secondary concern, it is necessary to configure this method for relevant type of advice
+     -Aspect J library provide several annotation to accomplish this
+     Eg:   1. @Before
+           2. @AfterReturning
+           3. @AfterThrowing
+           4. @After
+           5. @Around
+
+     - All these annotation are to be applied to a method level
+     - Once these advice specific annotation is applied, it is necessary to indicate where to the aspect is plugged in. This is done by using pointCut
+     - To apply the pointCut there are 2 option:
+        1. Use a pointCut expression as a parameter for the advice specific annotation parameter.
+            - This approach is used if different expression are used for different advices
+
+        2. Declare the pointCut expression only once and use it multiple time
+            - This approach is used if same expression is to be used for different advices
+
+            - To achieve this, it is necessary to define some method for forward referencing and configure that method as a pointcut by applying @PointCut annotation
+            - In order to specify the PointCut, the annotation accepts a String that indicates PointCut Expression
+            - It is mainly used with designators
+            - The most commonly used designation is 'execution'
+
+Step 4:
+    - Create Configuration specific class.
+    - Since the configuration is done for AOP and in AOP weaving comes into the picture by generating a PROXY, it has to be enabled
+    - This is done by using @EnableAspectJAutoProxy annotation which is to be applied on class level on configuration specific class
+
+Step 5:
+    - Write Main Program (Client Program)
+

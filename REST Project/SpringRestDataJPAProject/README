@@ -1,0 +1,42 @@
+Step to for Spring Data JPA example
+Spring Data JPA Example:
+Step 1:
+			Access Spring Initializer (start.spring.io) to build a Maven project with following dependencies.
+				1. Spring Web
+				2. Devtools
+				3. Spring Data JPA
+				4. MySQL Driver
+				
+Step 2:
+			Configure the project by making entries in application.properties
+			E.g.
+				Server Port
+				Driver Class
+				URL
+				Username
+				Password
+				etc.
+
+
+Step 3:
+	Create necessary artifacts (Class,Interfaces and so on)
+	1. JPA Entity Class:Movie
+	2. Repository Interface: Repository_name(Movie Repository)
+	3. Service Class: MovieService
+	4. Controller Class: MovieController
+	
+	
+Step 4:
+	- Handle Scanning
+	- Once all the artifacts (Classes and Interface) have been created, spring REST environment needs to pick them up. This is done using Scanning.
+	
+	- In Spring Data JPA, Scanning is done for 3 things:
+		1. Scanning of Controller and Service (Eg. MovieConroller and MovieService):
+			- This is done using a regular annotation: @SpringBootApplication as it is a superset of @ComponentScan
+		
+		2. Scanning of JPA specific repository (Eg. MovieRepository):
+			- This is done using an annotation @EnableJpaRepositories
+			
+		3. Scanning of JPA specific entity (Eg. Movie)
+			- This is done using an annotation : @EntityScan
+	

@@ -1,0 +1,72 @@
+ Step 1:
+ 	Access Spring Initializer to create a New Maven spring project
+ 	
+ 	- Add Dependencies
+ 		1. Spring Web
+ 		2. Spring Security 
+ 		3. Spring Dev Tools
+ 		
+ Step 2:
+ 	Create a REST End-Point
+ 	
+ 	- Spring Security by default enforce every end point of REST API.
+ 	- Even a request is made for non-existing resource, still it enforce to Sign in or not
+ 	
+ 	
+ 	- When a login is successful, Spring Security create a Session Cookie and this cookie is dispatched towards client.
+ 	- When the client makes subsequent request, the cookie is sent back to the server and the server understand  that this client is already signed in.
+ 	- In order to terminate the session, Spring security by provides: /logout endpoint
+ 	
+ 	Conclusion:
+ 	- Spring security provide 3 things
+ 	 1. End point: /login
+ 	 2. Login Form
+ 	 3. End Point: /logout
+ 	 
+ 	 
+ 	 Customizing Spring Security:
+ 	 	- Depending upon the requirement, It is necessary to customize Spring Security Model.
+ 	 	Eg.
+ 	 		- Changing the default user which is 'user' and default password which is randomly generated in logs.
+ 	 		- This can be achieved by making relevant entries inn application.properties.
+ 	 		
+ 	 		
+ 	 		
+ 	 Authentication Types:
+ 	 	- Authentication is mainly divided into 2 types:
+ 	  		1. Form Based Authentication
+ 	  		2. Basic Authentication
+ 	  		
+ 	  		1. Form Based Authentication
+ 	  			- In this, in order to sign-in, there is some form provided
+ 	  			- It is used to accept user name and password and upon clicking SUBMIT , authentication is done
+ 	  			
+ 	  		2. Basic Authentication
+ 	  			- In this, Base 64 encoding is used for password encryption
+ 	  			- It works on the basis of HTTP Request Header: authorization
+ 	  			- Client has to make request and along with that request, it has to send 'authorization' header
+ 	  			
+ 	  			
+ 	  - By default, Spring security enables both the authentications.
+ 	  
+ 	  
+* How Spring Security is configured?
+	- At the core, Spring Security makes use of several types of filters. These filters are used to intercept the request.
+	- All these filters work in a chain like structure. There is a series of filters.
+	- this is accomplished using a predefined Spring specific managed component is known as SecuityFilterChain
+	- In order to customize spring security, it is necessary to customize securityFilter
+	- In order to apply these changes, string security provides an annotation @EnableWebSecurity 
+	
+	
+* Customizing Spring Security further using SecurityFilterChain:
+	- The use configured using application.properties option has 1 major limitation
+	- It is possible to configure only one user, whereas in enterprise there might be several user.
+	
+	- These is possible using 3 option:
+		1. In-Memory
+		2. Database
+		2. LDAP (Lightweight Directory Access Protocol)
+		
+	- To configure users using In-Memory structure, Spring provide some API:
+		1. User
+		2. UserDetailsService
